@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets
+.env
+.env.local
+.env.production
+
+# Database
+data/
+
+# Build output
+dist/
+
+# Video source folders (too large for GitHub)
+Acdamey longform/
+Acdmey short form/
+public/videos/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Netlify
+.netlify/
+
+# IDE / tool folders
+.opencode/
+.playwright-cli/
+.superdesign/
+
+# Old design iteration folders
+dark-glass-ui-redesign/
+dark-glass-ui-redesign2/
+hero-background-animation-effect/
+hero-background-animation-effects fotter/
+ring-view-carousel-component/
+
+# PDFs (client documents)
+*.pdf

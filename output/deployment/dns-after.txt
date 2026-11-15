@@ -1,0 +1,311 @@
+- banner:
+  - link "hostinger":
+    - /url: /
+    - img "hostinger"
+  - button "Refer & earn up to $180":
+    - generic: Refer & earn up to $180
+  - button "Agent":
+    - generic: Agent
+  - button:
+  - button:
+  - button "Search":
+  - button "Your to-dos":
+  - generic: "2"
+  - generic: "Your to-dos: 2"
+  - button "Account":
+- navigation:
+  - list:
+    - link "Home Home":
+      - /url: /
+      - button "Home":
+      - generic: Home
+    - list
+    - button "Agent Agent":
+      - button "Agent":
+      - generic: Agent
+    - list
+    - link "Websites Websites":
+      - /url: /websites
+      - button "Websites":
+      - generic: Websites
+    - list:
+      - link "WordPress":
+        - /url: /websites?websiteType=wordpress
+        - generic: WordPress
+      - link "AI Builder":
+        - /url: /websites?websiteType=ai-builder
+        - generic: AI Builder
+      - link "Web Apps":
+        - /url: /websites?websiteType=nodejs
+        - generic: Web Apps
+      - link "PHP/HTML":
+        - /url: /websites?websiteType=other
+        - generic: PHP/HTML
+    - link "Domains Domains":
+      - /url: /domains
+      - button "Domains":
+      - generic: Domains
+    - list:
+      - link "Domain search":
+        - /url: /domains/domain-checker
+        - generic: Domain search
+      - link "Transfers":
+        - /url: /domains/transfers
+        - generic: Transfers
+      - link "DNS":
+        - /url: /domains/dns
+        - generic: DNS
+      - link "Contact profiles":
+        - /url: /domains/contact-profiles
+        - generic: Contact profiles
+    - link "Emails Emails":
+      - /url: /emails
+      - button "Emails":
+      - generic: Emails
+    - list
+    - link "More services More services":
+      - /url: /marketplace
+      - button "More services":
+      - generic: More services
+    - list
+- navigation:
+  - list:
+    - button "AI Builder AI Builder":
+      - button "AI Builder":
+      - generic: AI Builder
+    - list
+    - link "Ecomm Ecomm":
+      - /url: /ecommerce
+      - button "Ecomm":
+      - generic: Ecomm
+    - list
+- navigation:
+  - list:
+    - link "OpenClaw OpenClaw":
+      - /url: /applications/openclaw
+      - button "OpenClaw":
+      - generic: OpenClaw
+    - list
+    - link "Hermes Agent Hermes Agent":
+      - /url: /applications/hermes
+      - button "Hermes Agent":
+      - generic: Hermes Agent
+    - list
+    - link "n8n n8n":
+      - /url: /applications/n8n
+      - button "n8n":
+      - generic: n8n
+    - list
+    - link "Paperclip Paperclip":
+      - /url: /applications/paperclip
+      - button "Paperclip":
+      - generic: Paperclip
+    - list
+- navigation:
+  - list:
+    - link "Email marketing Email marketing":
+      - /url: /email-marketing
+      - button "Email marketing":
+      - generic: Email marketing
+    - list
+    - link "Google Ads Google Ads":
+      - /url: /google-ads
+      - button "Google Ads":
+      - generic: Google Ads
+    - list
+- navigation:
+  - list:
+    - link "VPS VPS":
+      - /url: /vps
+      - button "VPS":
+      - generic: VPS
+    - list
+    - link "GPU GPU":
+      - /url: /gpu
+      - button "GPU":
+      - generic: GPU
+    - list
+    - link "API API":
+      - /url: /api
+      - button "API":
+      - generic: API
+    - list
+    - link "AI Router AI Router":
+      - /url: /ai-router
+      - button "AI Router":
+      - generic: AI Router
+    - list
+- complementary:
+  - generic: Select domain
+  - combobox "Select domain":
+    - generic: theshortcutacademy.in
+  - navigation:
+    - list:
+      - menuitem "Domain Overview":
+        - generic: Domain Overview
+      - list
+      - menuitem "DNS / Nameservers":
+        - generic: DNS / Nameservers
+      - list
+      - menuitem "Domain Ownership":
+        - generic: Domain Ownership
+      - list
+      - menuitem "Brand protection":
+        - generic: Brand protection
+      - list
+- banner:
+  - navigation "Breadcrumb":
+    - list:
+      - link "Home":
+        - /url: /?amplitudeLocation=breadcrumbs
+      - link "Domain portfolio":
+        - /url: /domains?redirectLocation=breadcrumbs
+        - generic: Domain portfolio
+      - link "theshortcutacademy.in":
+        - /url: /domain/theshortcutacademy.in/domain-overview?redirectLocation=breadcrumbs
+        - generic: theshortcutacademy.in
+      - generic: DNS / Nameservers
+  - heading "DNS / Nameservers" [level=1]
+- main:
+  - list:
+    - generic: DNS records
+    - generic: Child nameservers
+    - generic: Redirects
+    - generic: DNSSEC
+    - generic: DNS history
+    - generic: Subdomains
+    - generic: SSL
+  - paragraph: Nameservers
+  - paragraph: Nameservers handle internet requests for your domain. You can use Hostinger nameservers or use custom nameservers to point to other hosting provider.
+  - paragraph: horizon.dns-parking.com
+  - paragraph: orbit.dns-parking.com
+  - button "Change Nameservers":
+    - generic: Change Nameservers
+  - heading "Manage DNS records" [level=3]
+  - paragraph: DNS records control how your domain works. Use DNS records to connect your domain to websites, email services, and other online tools.
+  - button "Export":
+    - generic: Export
+  - button "Import":
+    - generic: Import
+  - heading "Quick setup" [level=4]
+  - paragraph: Connect to email, websites, and other services with one click. We'll add the right records for you.
+  - button "Shopify":
+    - generic: S
+    - generic: Shopify
+  - button "Google Workspace (Gmail)":
+    - generic: G
+    - generic: Google Workspace (Gmail)
+  - button "Google site verification":
+    - generic: G
+    - generic: Google site verification
+  - generic: Type
+  - combobox "Type":
+    - generic: Choose type
+  - text: Name
+  - textbox "-" [disabled]
+  - textbox "Input" [disabled]: .theshortcutacademy.in
+  - text: Value
+  - textbox "Value" [disabled]:
+    - /placeholder: "-"
+  - text: TTL
+  - spinbutton "TTL" [disabled]: "14400"
+  - button "Add Record":
+    - generic: Add Record
+  - generic: Add more records
+  - textbox "Search"
+  - table:
+    - rowgroup:
+      - row "Select all rows Type Name Priority Content TTL actions":
+        - columnheader "Select all rows":
+          - checkbox "Select all rows"
+        - columnheader "Type":
+          - generic: Type
+        - columnheader "Name":
+          - generic: Name
+        - columnheader "Priority":
+          - generic: Priority
+        - columnheader "Content":
+          - generic: Content
+        - columnheader "TTL":
+          - generic: TTL
+        - columnheader "actions":
+          - generic: actions
+    - rowgroup:
+      - row "Select row CNAME www 0 theshortcutacademy.in 300 Edit Delete":
+        - cell "Select row":
+          - checkbox "Select row"
+        - cell "CNAME":
+          - generic: CNAME
+        - cell "www":
+          - generic: www
+        - cell "0":
+          - generic: "0"
+        - cell "theshortcutacademy.in":
+          - generic: theshortcutacademy.in
+        - cell "300":
+          - generic: "300"
+        - cell "Edit Delete":
+          - button "Edit":
+          - button "Delete":
+      - row "Select row TXT @ 0 \"google-site-verification=cbMdcNKSot16HmchBIBy2w-vqN4ON-AfSeNPLvdZ1eU\" 300 Edit Delete":
+        - cell "Select row":
+          - checkbox "Select row"
+        - cell "TXT":
+          - generic: TXT
+        - cell "@":
+          - generic: "@"
+        - cell "0":
+          - generic: "0"
+        - cell "\"google-site-verification=cbMdcNKSot16HmchBIBy2w-vqN4ON-AfSeNPLvdZ1eU\"":
+          - generic: "\"google-site-verification=cbMdcNKSot16HmchBIBy2w-vqN4ON-AfSeNPLvdZ1eU\""
+        - cell "300":
+          - generic: "300"
+        - cell "Edit Delete":
+          - button "Edit":
+          - button "Delete":
+      - row "Select row A @ 0 129.225.68.60 300 Edit Delete":
+        - cell "Select row":
+          - checkbox "Select row"
+        - cell "A":
+          - generic: A
+        - cell "@":
+          - generic: "@"
+        - cell "0":
+          - generic: "0"
+        - cell "129.225.68.60":
+          - generic: 129.225.68.60
+        - cell "300":
+          - generic: "300"
+        - cell "Edit Delete":
+          - button "Edit" [active]:
+          - button "Delete":
+  - paragraph: Reset DNS records
+  - paragraph: This feature resets all existing DNS records of theshortcutacademy.in to default.
+  - button "Reset DNS records":
+    - generic: Reset DNS records
+- generic: Full page
+- generic: Close
+- generic: Menu
+- generic: Search
+- generic: Your to-dos
+- generic: Account
+- generic: Launch multiple online stores. Manage all orders, products, and payments in one place.
+- generic: Email marketing made simple with AI. Start sending campaigns to grow your audience.
+- generic: What the record does. A and AAAA point to an IP address, CNAME points to another hostname, MX routes email, TXT holds verification text.
+- generic: The domain or subdomain this record covers, written without your domain. @ means theshortcutacademy.in itself, www means www.theshortcutacademy.in. If you pasted a full hostname, we trimmed your domain off the end; the record still covers the same address.
+- generic: For MX and SRV records, the order in which servers are tried. Lower numbers are tried first.
+- generic: The value of the record. For example, an IP address for A and AAAA records, a hostname for CNAME and MX records, or text for TXT records.
+- generic: Time to live, in seconds. How long resolvers cache this record before re-checking.
+- generic: Edit record
+- generic: Delete record
+- generic: Edit record
+- generic: Delete record
+- generic: Enter @ to create a record for theshortcutacademy.in. Enter a subdomain to create a record for subdomain.theshortcutacademy.in.
+- generic: Please select record type first
+- generic: The IPv4 address this domain or subdomain points to.
+- generic: Please select record type first
+- generic: Time to live, in seconds. How long resolvers cache this record before re-checking.
+- generic: Please select record type first
+- generic: .theshortcutacademy.in
+- generic: Edit record
+- generic: Delete record

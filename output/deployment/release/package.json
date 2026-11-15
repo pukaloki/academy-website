@@ -1,0 +1,15 @@
+{
+  "name": "shortcut-academy-production",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "google-auth-library": "11.1.0"
+  }
+}

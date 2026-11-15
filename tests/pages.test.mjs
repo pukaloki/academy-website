@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { render } from '../lib/render.mjs';
+const routes=['/','/batches','/about','/login','/signup','/contact','/privacy','/terms','/refunds'];
+test('public pages have distinct metadata, semantic landmarks, and no prohibited copy',()=>{
+ const titles=new Set();for(const route of routes){const html=render(route);const title=html.match(/<title>(.*?)<\/title>/)[1];assert.ok(!titles.has(title),`Duplicate title ${title}`);titles.add(title);assert.match(html,/<meta name="description" content="[^"]+"/);assert.match(html,/<main id="main">/);assert.match(html,/<link rel="icon"/);assert.equal((html.match(/<h1>/g)||[]).length,1);assert.doesNotMatch(html,/—|lorem ipsum|made with ai|supercharge|game-changer/i);assert.match(html,/href="\/privacy"/);assert.match(html,/href="\/refunds"/);}
+});
+test('confirmed course is shown without implying payment or guaranteed placement',()=>{const html=render('/');assert.match(html,/The Shortcut Academy/);assert.match(html,/DaVinci Resolve/);assert.match(html,/₹2,999/);assert.equal((html.match(/class="p-card p-prism/g)||[]).length,1);assert.doesNotMatch(html,/Instructor profiles and approved|Premiere Pro and After Effects are the core|id="contact-form"/);assert.match(html,/employment and income are not guaranteed/);const enroll=render('/enroll');assert.match(enroll,/Loading checkout/);assert.match(enroll,/id="course-payment" disabled/);assert.match(render('/login'),/Continue with Google/);});
+test('dashboard escapes user-controlled identity and hides other student data',()=>{const html=render('/dashboard',{user:{name:'<script>alert(1)</script>'},enrollments:[]});assert.doesNotMatch(html,/<script>alert/);assert.match(html,/&lt;script&gt;/);assert.match(html,/not enrolled in a batch yet/);});

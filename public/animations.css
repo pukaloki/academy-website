@@ -1,0 +1,480 @@
+/* ==========================================================================
+   Phoenix Render - Animation & Visual Effects
+   Dark-themed Video Editing Academy Stylesheet
+   Palette:
+     Backgrounds: #0B0B0C, #16161A, #1f1f24
+     Accent Orange: #FF6B2C, #FF5A1F
+     Text: #F5F2EC, #9C948C
+   ========================================================================== */
+
+/* 1. HERO SECTION - Remove photo dependency, use pure CSS/gradient background */
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, #0B0B0C 0%, #0A0805 30%, #1F1710 60%, #0B0B0C 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(255, 107, 44, 0.08) 0%, transparent 70%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, #0B0B0C);
+  z-index: -1;
+}
+
+.hero-photo {
+  display: none !important;
+}
+
+.hero-shade {
+  display: none !important;
+}
+
+/* 2. GLASSMORPHISM cards */
+.glass-card {
+  background: rgba(22, 22, 26, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+/* 3. HEADER glassmorphism */
+.site-header.scrolled {
+  background: rgba(11, 11, 12, 0.75) !important;
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+}
+
+/* 4. SECTION BACKGROUNDS with radial orange glow */
+.why-section {
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(77, 34, 0, 0.15) 0%, transparent 60%);
+}
+
+#curriculum {
+  position: relative;
+}
+
+#curriculum::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(50% 50% at 50% 53.1%, rgba(61, 31, 0, 0.12) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.batch-section {
+  background: radial-gradient(ellipse 70% 40% at 50% 100%, rgba(77, 34, 0, 0.12) 0%, transparent 70%);
+}
+
+.studio-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(31, 23, 16, 0.15) 50%, transparent 100%);
+}
+
+/* 5. FOOTER background */
+.footer {
+  position: relative;
+  background: linear-gradient(180deg, #0B0B0C 0%, #0A0805 50%, #1a1008 100%);
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 224, 178, 0.15) 50%, transparent 100%);
+}
+
+/* 6. BUTTON GLOW effects */
+.button {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 107, 44, 0.15);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 107, 44, 0.3) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:hover {
+  box-shadow: 0 0 30px rgba(255, 107, 44, 0.3), 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.button.secondary {
+  box-shadow: none;
+}
+
+.button.secondary:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 44, 0.1);
+}
+
+/* 7. CARD HOVER with tilt (3D perspective) */
+.value-card,
+.course-card,
+.batch-card,
+.journey-card,
+.live-card,
+.instructor-card {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.3s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.value-card:hover,
+.course-card:hover,
+.batch-card:hover,
+.journey-card:hover,
+.live-card:hover,
+.instructor-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 107, 44, 0.06);
+  border-color: rgba(255, 107, 44, 0.2);
+}
+
+/* 8. ICON ANIMATION */
+.feature-icon {
+  transition: transform 0.3s ease, color 0.3s;
+}
+
+.glass-card:hover .feature-icon,
+.value-card:hover .feature-icon,
+.journey-card:hover .feature-icon {
+  transform: scale(1.2) translateY(-3px);
+  color: #FF6B2C;
+}
+
+.button-arrow {
+  transition: transform 0.25s ease;
+}
+
+.button:hover .button-arrow {
+  transform: translateX(4px);
+}
+
+.text-link:hover .icon {
+  transform: translateX(5px);
+  transition: transform 0.25s ease;
+}
+
+/* 9. SEPARATOR LINE animation */
+.hero-ruler {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-ruler::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 44, 0.3), transparent);
+  animation: ruler-shine 4s linear infinite;
+}
+
+@keyframes ruler-shine {
+  to {
+    left: 200%;
+  }
+}
+
+/* 10. SCROLL REVEAL keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 107, 44, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 44, 0.2);
+  }
+}
+
+/* 11. FLOATING PARTICLES (CSS-only decorative) */
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) translateX(30px);
+    opacity: 0;
+  }
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particles span {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 180, 107, 0.6);
+  border-radius: 50%;
+  animation: float-particle var(--dur, 8s) var(--delay, 0s) linear infinite;
+  bottom: -10px;
+  left: var(--x, 50%);
+}
+
+/* 12. EYEBROW DOT pulse */
+.eyebrow > span {
+  animation: glowPulse 2.5s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* 13. SECTION DIVIDER decorative lines */
+.section + .section {
+  position: relative;
+}
+
+.section + .section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(400px, 60%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 44, 0.2), transparent);
+}
+
+/* 14. FAQ ITEM animation */
+.faq-item {
+  border-color: rgba(255, 255, 255, 0.06);
+  transition: border-color 0.3s;
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 107, 44, 0.2);
+}
+
+.faq-item[open] summary .icon {
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.faq-item summary .icon {
+  transition: transform 0.3s;
+}
+
+/* 15. CONTACT FORM glass effect */
+.contact-form {
+  background: rgba(22, 22, 26, 0.5) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  border-radius: 16px !important;
+}
+
+input,
+select,
+textarea {
+  background: rgba(11, 11, 12, 0.8) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: rgba(255, 107, 44, 0.5) !important;
+  box-shadow: 0 0 15px rgba(255, 107, 44, 0.1) !important;
+}
+
+/* 16. LOGO/BRAND animation */
+.brand {
+  transition: opacity 0.3s;
+}
+
+.brand:hover {
+  opacity: 0.85;
+}
+
+.brand img {
+  transition: transform 0.4s ease;
+}
+
+.brand:hover img {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* 17. SOCIAL ICON hover */
+.social-links a,
+.social-unavailable {
+  transition: transform 0.3s, color 0.3s, border-color 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  color: #FF6B2C;
+  border-color: rgba(255, 107, 44, 0.3);
+}
+
+/* 18. READING PROGRESS BAR glow */
+.reading-progress {
+  box-shadow: 0 0 8px rgba(255, 107, 44, 0.4);
+}
+
+/* 19. FINAL CTA section glow */
+.final-cta {
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(77, 34, 0, 0.2) 0%, rgba(11, 11, 12, 0.95) 70%) !important;
+  border: 1px solid rgba(255, 107, 44, 0.1) !important;
+  border-radius: 24px !important;
+  overflow: hidden;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 107, 44, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 20. ABOUT PAGE art image - also hide unrelated photo */
+.about-art > img {
+  filter: saturate(0.2) brightness(0.5) contrast(1.2);
+}
+
+.about-art {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(61, 31, 0, 0.3) 0%, #0A0805 100%);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 21. HERO CONTENT stagger animation */
+.hero-content .eyebrow {
+  animation: fadeInUp 0.8s 0.1s ease both;
+}
+
+.hero-content h1 {
+  animation: fadeInUp 0.8s 0.25s ease both;
+}
+
+.hero-content .hero-description {
+  animation: fadeInUp 0.8s 0.4s ease both;
+}
+
+.hero-content .hero-actions {
+  animation: fadeInUp 0.8s 0.55s ease both;
+}
+
+.hero-content .hero-tools {
+  animation: fadeInUp 0.8s 0.7s ease both;
+}
+
+.hero-ruler {
+  animation: fadeInUp 0.6s 0.85s ease both;
+}
+
+.hero-foot {
+  animation: fadeInUp 0.6s 1s ease both;
+}
+
+/* 22. NAVBAR LINK underline animation */
+.desktop-nav a::after {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+/* ACCESSIBILITY: PREFERS REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-photo {
+    display: none !important;
+  }
+}
+
+.software-icon { box-shadow: 0 0 15px rgba(255,107,44,0.1); border-color: rgba(255,255,255,0.15) !important; }
+.software-icon:hover { box-shadow: 0 0 30px rgba(255,107,44,0.4), inset 0 0 15px rgba(255,107,44,0.2); border-color: rgba(255,107,44,0.5) !important; }
+
+.about-art-abstract { width: 100%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(255,107,44,0.15) 0%, transparent 60%), radial-gradient(circle at 30% 70%, rgba(61,31,0,0.8) 0%, #000 70%); border-radius: inherit; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.about-art-abstract::after { content:''; position:absolute; inset:0; background: repeating-linear-gradient(45deg, rgba(255,107,44,0.03) 0px, rgba(255,107,44,0.03) 1px, transparent 1px, transparent 10px); }

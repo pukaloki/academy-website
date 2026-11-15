@@ -1,0 +1,264 @@
+/* ── RingView Seamless Loop ── */
+.supplied-hero.hero {
+  justify-content: center;
+  padding-top: 70px !important;
+  min-height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.supplied-hero .hero-content.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 0 !important;
+  gap: 0 !important;
+}
+
+.supplied-hero .hero-copy-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.supplied-hero .hero-copy-panel-top { margin-bottom: 0; }
+.supplied-hero .hero-copy-panel-bottom { margin-top: 0; }
+
+.supplied-hero .hero-kicker { display: inline-block; margin-inline: auto; margin-bottom: 0px; }
+.supplied-hero .hero-description { margin-inline: auto; text-align: center; margin-bottom: 16px; }
+.supplied-hero .hero-actions { justify-content: center; margin-bottom: 24px; }
+.supplied-hero .hero-points { justify-content: center; }
+
+/* ── Carousel Stage ── */
+.ringview-stage {
+  position: relative;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  height: 260px; 
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Light mask on edges */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+.ringview-stage:active { cursor: grabbing; }
+
+.ringview-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ringview-rail {
+  position: absolute;
+  left: 0; top: 50%; 
+  display: flex; 
+  align-items: center; 
+  gap: 0; 
+  transform: translateY(-50%);
+  will-change: transform;
+}
+
+.ringview-panel {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #0d0c0a;
+  border-radius: 8px;
+  margin-right: 12px;
+  border: 1px solid rgba(255, 140, 58, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+  backface-visibility: hidden;
+  transform-origin: center center;
+  cursor: pointer;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ringview-panel:hover {
+  transform: scale(1.025);
+  border-color: rgba(255, 140, 58, 0.6);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 20px rgba(255, 107, 44, 0.25);
+}
+
+/* Base sizes (Desktop) - panelHeight: 280 */
+.panel-tall { width: 135px; height: 240px; }
+.panel-wide { width: 426px; height: 240px; }
+
+.ringview-panel img,
+.ringview-panel video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.ringview-caption {
+  display: none !important;
+}
+
+/* ── Responsive Sizes ── */
+@media (max-width: 1100px) {
+  .ringview-stage { height: 280px; }
+  .panel-tall { width: 135px; height: 240px; }
+  .panel-wide { width: 426px; height: 240px; }
+}
+@media (max-width: 768px) {
+  .ringview-stage { height: 240px; }
+  .panel-tall { width: 112px; height: 200px; }
+  .panel-wide { width: 355px; height: 200px; }
+  .supplied-hero.hero { padding-top: 100px !important; }
+}
+@media (max-width: 600px) {
+  .ringview-stage { height: 200px; }
+  .panel-tall { width: 90px; height: 160px; }
+  .panel-wide { width: 284px; height: 160px; }
+  .supplied-hero .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+}
+
+.supplied-hero .hero-background { height: 100vh !important; }
+
+/* ── Interactive RingView Panel Enhancements ── */
+.ringview-panel {
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+.ringview-panel:hover {
+  filter: brightness(1.12);
+}
+
+
+/* ── Video Player Modal ── */
+dialog#video-dialog.video-modal {
+  width: 92vw;
+  max-width: 920px;
+  max-height: 92vh;
+  margin: auto;
+  background: #0d0c0b;
+  border: 1px solid rgba(255, 107, 44, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 107, 44, 0.18);
+  padding: 24px;
+  color: #fff;
+}
+dialog#video-dialog.video-modal::backdrop {
+  background: rgba(5, 5, 7, 0.85);
+  backdrop-filter: blur(12px);
+}
+.video-modal-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.video-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.video-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.video-modal-title-wrap h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+.video-modal-title-wrap p {
+  font-size: 12px;
+  color: #ff8c42;
+  margin: 2px 0 0;
+}
+.video-modal-player-wrap {
+  width: 100%;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 64vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+#dialog-video-element {
+  width: 100%;
+  max-height: 64vh;
+  object-fit: contain;
+  background: #000;
+  display: block;
+}
+@media (max-width: 640px) {
+  dialog#video-dialog.video-modal {
+    padding: 16px;
+    width: 96vw;
+  }
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Compact hero composition; retain the academy's type and orange palette. */
+.supplied-hero.hero{min-height:min(820px,100svh)!important;padding:142px 0 58px!important}
+.supplied-hero .hero-background{height:100%!important}
+.supplied-hero .hero-content.wrap{max-width:1240px;padding-top:0}
+.supplied-hero .hero-copy-panel{padding:0}
+.supplied-hero h1{font-size:clamp(46px,6.2vw,88px);line-height:1.02;letter-spacing:-.045em;margin:18px 0 20px}
+.supplied-hero .hero-kicker{font-size:10px;letter-spacing:.17em;padding-bottom:8px}
+.ringview-stage{width:min(1280px,100vw);max-width:100vw;height:210px;margin:0 calc(-50vw + 50%) 18px;touch-action:pan-y}
+.ringview-panel{border-radius:5px;box-shadow:none;border-color:#ffffff18}
+.ringview-panel.panel-tall{width:108px;height:192px}
+.ringview-panel.panel-wide{width:341.33px;height:192px}
+.ringview-panel.panel-wide video{object-fit:contain}
+.supplied-hero .hero-description{font-size:17px;line-height:1.5;max-width:540px;margin:0 auto 20px}
+.supplied-hero .hero-actions{margin:0 0 18px;gap:12px}
+.supplied-hero .hero-actions .button{min-height:50px;padding:13px 28px}
+.supplied-hero .hero-points{font-size:11px;gap:20px}
+@media(max-width:600px){
+ .supplied-hero.hero{min-height:0!important;padding:120px 0 46px!important}
+ .supplied-hero h1{font-size:clamp(42px,11vw,62px);margin:16px 0 20px}
+ .supplied-hero .hero-kicker{font-size:8px;letter-spacing:.12em}
+ .ringview-stage{height:162px;margin-bottom:18px}
+ .ringview-panel.panel-tall{width:81px;height:144px}
+ .ringview-panel.panel-wide{width:256px;height:144px}
+ .supplied-hero .hero-description{font-size:14px;max-width:310px}
+ .supplied-hero .hero-actions{flex-direction:row;max-width:none;width:auto;gap:8px}
+ .supplied-hero .hero-actions .button{padding:12px 16px;font-size:12px;min-height:46px;min-width:0}
+ .supplied-hero .hero-points{flex-wrap:wrap;gap:8px 14px;font-size:9px}
+}
+@media(max-width:600px){
+ .supplied-hero .hero-points{flex-direction:row;margin-top:0;align-items:center}
+ .supplied-hero .hero-points>span{padding:5px 6px;white-space:nowrap}
+ .supplied-hero .hero-actions .button{white-space:nowrap;flex-shrink:0}
+}
+
+/* Passive, sharp-edged preview strip matching the supplied reference. */
+.ringview-stage{-webkit-mask-image:none;mask-image:none;cursor:default;pointer-events:none}
+.ringview-panel{border:0;border-radius:0;pointer-events:none}
+.supplied-hero h1{font-size:clamp(40px,5.2vw,74px);margin:14px 0 22px;line-height:1.08}
+.hero-title-finish{white-space:nowrap}
+.supplied-hero .hero-kicker{font-size:9px;letter-spacing:.14em;padding-bottom:7px}
+@media(max-width:600px){.supplied-hero h1{font-size:clamp(34px,9.6vw,48px);margin:14px 0 20px}.hero-title-finish{display:block}.supplied-hero .hero-kicker{font-size:8px}}
+@media(min-width:1000px){.supplied-hero h1{max-width:none;width:auto;white-space:nowrap}.supplied-hero .hero-copy-panel-top{max-width:none;width:100%}}
+/* Bound both CTAs to the mobile content width (including iOS Safari). */
+@media(max-width:600px){
+ .supplied-hero .hero-copy-panel-bottom{width:100%;min-width:0}
+ .supplied-hero .hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:360px;gap:10px;align-items:stretch;box-sizing:border-box}
+ .supplied-hero .hero-actions .button{width:100%;max-width:none;min-width:0;box-sizing:border-box;padding:12px 10px;gap:8px;justify-content:center;font-size:12px;white-space:nowrap}
+ .supplied-hero .hero-actions .button .icon{width:16px;height:16px;flex:none}
+}
+@media(max-width:350px){
+ .supplied-hero .hero-actions{grid-template-columns:1fr;max-width:260px}
+}
+
+/* Keep rain visible over the dark floor vignette, behind hero content. */
+.supplied-hero .rain-canvas{z-index:1}
